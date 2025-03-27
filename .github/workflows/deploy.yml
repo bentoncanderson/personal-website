@@ -13,12 +13,14 @@ jobs:
       # Checkout the repository
       - name: Checkout repository
         uses: actions/checkout@v2
-
-      # Set up Node.js
-      - name: Set up Node.js
-        uses: actions/setup-node@v2
         with:
-          node-version: '22.14.0'  # Match your Node.js version
+            fetch-depth: 0
+
+    #   # Set up Node.js
+    #   - name: Set up Node.js
+    #     uses: actions/setup-node@v2
+    #     with:
+    #       node-version: '22.14.0'  # Match your Node.js version
 
       # Install dependencies
       - name: Install dependencies
