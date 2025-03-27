@@ -1,0 +1,36 @@
+name: Deploy Astro site to GitHub Pages
+
+on:
+  push:
+    branches:
+      - master  # or 'main', depending on your default branch
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      # Checkout the repository
+      - name: Checkout repository
+        uses: actions/checkout@v2
+
+      # Set up Node.js
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: '16'  # Match your Node.js version
+
+      # Install dependencies
+      - name: Install dependencies
+        run: npm install
+
+      # Build the Astro site
+      - name: Build the site
+        run: npm run build
+
+      # Deploy to GitHub Pages (Push build files to gh-pages branch)
+      - name: Deploy to GitHub Pages
+        uses: JamesIves/github-pages-deploy-action@4.1.2
+        with:
+          branch: gh-pages  # Make sure this points to the gh-pages branch
+          folder: dist  # The folder where the build files are located
