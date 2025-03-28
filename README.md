@@ -1,1 +1,1 @@
-This is the GitHub repository for my personal website: <a href="bentonanderson.org">bentonanderson.org</a>.
+This is the GitHub repository for my personal website: <a href="http://bentonanderson.org">bentonanderson.org</a>.
